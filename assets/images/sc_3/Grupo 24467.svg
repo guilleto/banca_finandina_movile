@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11.584" height="14.952" viewBox="0 0 11.584 14.952">
+  <g id="Grupo_24467" data-name="Grupo 24467" transform="translate(1 1)">
+    <g id="Grupo_21728" data-name="Grupo 21728">
+      <path id="Trazado_19084" data-name="Trazado 19084" d="M76.9,300.6a2.562,2.562,0,0,0-1.9-3.1" transform="translate(-68.806 -294.543)" fill="none" stroke="#0fa362" stroke-linecap="round" stroke-width="2"/>
+      <path id="Trazado_19085" data-name="Trazado 19085" d="M78.981,297.287A3.956,3.956,0,0,0,76,292.5" transform="translate(-69.524 -290.952)" fill="none" stroke="#0fa362" stroke-linecap="round" stroke-width="2"/>
+      <g id="Grupo_21483" data-name="Grupo 21483">
+        <path id="Trazado_19086" data-name="Trazado 19086" d="M60.321,296.292v2.252a1.408,1.408,0,0,1-1.408,1.408h-4.5A1.408,1.408,0,0,1,53,298.544V288.408A1.408,1.408,0,0,1,54.408,287h4.5a1.4,1.4,0,0,1,.985.4" transform="translate(-53 -287)" fill="none" stroke="#0fa362" stroke-linecap="round" stroke-width="2"/>
+        <line id="Línea_377" data-name="Línea 377" x2="5.614" transform="translate(0 1.83)" fill="none" stroke="#0fa362" stroke-linecap="round" stroke-width="2"/>
+        <line id="Línea_378" data-name="Línea 378" x2="7.321" transform="translate(0 10.559)" fill="none" stroke="#0fa362" stroke-linecap="round" stroke-width="2"/>
+        <line id="Línea_379" data-name="Línea 379" x2="1.126" transform="translate(3.097 0.985)" fill="none" stroke="#0fa362" stroke-linecap="round" stroke-width="2"/>
+        <ellipse id="Elipse_1291" data-name="Elipse 1291" cx="0.563" cy="0.563" rx="0.563" ry="0.563" transform="translate(3.097 11.122)" fill="#0fa362"/>
+      </g>
+    </g>
+    <path id="Trazado_20658" data-name="Trazado 20658" d="M73.59,30.134V28.8a.675.675,0,0,1,.329.262.235.235,0,1,0,.392-.258,1.143,1.143,0,0,0-.722-.491v-.373a.235.235,0,1,0-.47,0v.372a1.145,1.145,0,0,0,0,2.243v1.333a.676.676,0,0,1-.329-.262.235.235,0,1,0-.392.258,1.143,1.143,0,0,0,.722.491v.373a.235.235,0,1,0,.47,0v-.372a1.145,1.145,0,0,0,0-2.243Zm-.911-.7a.676.676,0,0,1,.442-.633v1.266A.676.676,0,0,1,72.679,29.434Zm.911,2.454V30.622a.675.675,0,0,1,0,1.266Z" transform="translate(-69.715 -24.197)" fill="#0fa362"/>
+  </g>
+</svg>
