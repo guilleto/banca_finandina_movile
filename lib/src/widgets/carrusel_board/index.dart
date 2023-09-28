@@ -5,34 +5,18 @@ import '../dot_carrusel/index.dart';
 import 'package:flutter/material.dart';
 
 class CarruselBoard extends StatefulWidget {
-  const CarruselBoard({Key? key}) : super(key: key);
+  final List<bool> isPressedList;
+  final Function(int index, List<bool> isPressedList) handleDotTap;
+
+  const CarruselBoard(
+      {Key? key, required this.handleDotTap, required this.isPressedList})
+      : super(key: key);
 
   @override
   _CarruselBoardState createState() => _CarruselBoardState();
 }
 
 class _CarruselBoardState extends State<CarruselBoard> {
-  late List<bool> isPressedList;
-
-  _CarruselBoardState() {
-    isPressedList = List.generate(7, (index) => index == 0);
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    // Inicializa la lista con el primer elemento como true y los demás como false
-    isPressedList = List.generate(7, (index) => index == 0);
-  }
-
-  void handleDotTap(int index) {
-    setState(() {
-      for (int i = 0; i < isPressedList.length; i++) {
-        isPressedList[i] = (i == index);
-      }
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,11 +33,14 @@ class _CarruselBoardState extends State<CarruselBoard> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: List.generate(
-          isPressedList.length,
+          widget.isPressedList.length,
           (index) => DotCarrusel(
-            isPressed: isPressedList[index],
+            isPressed: widget.isPressedList[index],
             onTap: () {
-              handleDotTap(index);
+              setState(() {
+                widget.handleDotTap(index, widget.isPressedList);
+              });
+
               print('DotCarrusel${index + 1}');
             },
           ),
