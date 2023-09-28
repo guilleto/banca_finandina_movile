@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: Colors.white,
-      ),
+          useMaterial3: true,
+          colorSchemeSeed: Colors.white,
+          fontFamily: "Roboto"),
       title: 'FinandinaApp',
       home: ScreenSliderPresentation(),
     );
