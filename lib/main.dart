@@ -1,7 +1,4 @@
-import 'package:banca_finandina_movile/src/screens/initial_1/indesx.dart';
 import 'package:banca_finandina_movile/src/widgets/screen_slider_presentation/index.dart';
-import 'package:flutter/material.dart';
-
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
