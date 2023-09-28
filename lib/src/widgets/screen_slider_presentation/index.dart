@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../screens/bank_5/index.dart';
 import '../../screens/initial_1/indesx.dart';
+import '../../screens/pay_3/index.dart';
+import '../../screens/products_2/index.dart';
+import '../../screens/scan_6_7/index.dart';
+import '../../screens/send_4/index.dart';
 import '../carrusel_board/index.dart';
 import '../dot_carrusel/index.dart';
 
@@ -18,6 +23,11 @@ class _ScreenSliderPresentationState extends State<ScreenSliderPresentation> {
   late List<bool> isPressedList;
   final List<Widget> screenToRenderList = [
     InitialScreen(),
+    ProductsScreen(),
+    PayScreen(),
+    SendScreen(),
+    BankScreen(),
+    ScanScreen(),
   ];
 
   late Widget screenToRender;
