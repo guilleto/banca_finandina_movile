@@ -8,6 +8,7 @@ import '../../screens/scan_6_7/index.dart';
 import '../../screens/send_4/index.dart';
 import '../carrusel_board/index.dart';
 import '../dot_carrusel/index.dart';
+import 'package:flutter/material.dart';
 
 class ScreenSliderPresentation extends StatefulWidget {
   const ScreenSliderPresentation({
@@ -60,7 +61,26 @@ class _ScreenSliderPresentationState extends State<ScreenSliderPresentation> {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          screenToRender,
+          AnimatedSwitcher(
+            transitionBuilder: (Widget child, Animation<double> animation) =>
+                FadeTransition(
+              opacity: animation,
+              child: child,
+            ),
+
+            duration: Duration(milliseconds: 1000), // Duración de la animación
+            switchInCurve: Curves.easeIn, // Curva de entrada
+            switchOutCurve: Curves.easeOut, // Curva de salida
+            layoutBuilder: (currentChild, previousChildren) {
+              return Stack(
+                children: <Widget>[
+                  ...previousChildren,
+                  if (currentChild != null) currentChild,
+                ],
+              );
+            },
+            child: screenToRender, // Widget a animar
+          ),
           Center(
             child: CarruselBoard(
               handleDotTap: handleDotTap,
