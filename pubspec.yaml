@@ -2,18 +2,19 @@ name: banca_finandina_movile
 description: A new Flutter project.
 
 # Prevent accidental publishing to pub.dev.
-publish_to: 'none'
+publish_to: "none"
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.6 <4.0.0'
+  sdk: ">=3.0.6 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  flutter_svg: ^2.0.7
 
 dev_dependencies:
   flutter_test:
@@ -30,3 +31,9 @@ flutter:
   assets:
     # Add assets from the images directory to the application.
     - assets/images/
+    - assets/images/sc_1/
+    - assets/images/sc_2/
+    - assets/images/sc_3/
+    - assets/images/sc_4/
+    - assets/images/sc_5/
+    - assets/images/sc_6_7/
