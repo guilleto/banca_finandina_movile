@@ -81,11 +81,15 @@ class _ScreenSliderPresentationState extends State<ScreenSliderPresentation> {
             },
             child: screenToRender, // Widget a animar
           ),
-          Center(
-            child: CarruselBoard(
-              handleDotTap: handleDotTap,
-              isPressedList: isPressedList,
-            ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CarruselBoard(
+                handleDotTap: handleDotTap,
+                isPressedList: isPressedList,
+              ),
+            ],
           ),
         ],
       ),
