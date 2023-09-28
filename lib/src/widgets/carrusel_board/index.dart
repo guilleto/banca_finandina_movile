@@ -20,84 +20,95 @@ class CarruselBoard extends StatefulWidget {
 class _CarruselBoardState extends State<CarruselBoard> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsetsDirectional.all(16),
+    bool lastDot =
+        widget.isPressedList.indexOf(true) == (widget.isPressedList.length - 1);
+
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 1000),
+      curve: Curves.ease,
+      margin: const EdgeInsetsDirectional.all(16),
       height: 64,
       decoration: BoxDecoration(
-        color: Colors.white10,
-        borderRadius: BorderRadius.horizontal(
+        color: lastDot ? Colors.white : Colors.white10,
+        borderRadius: const BorderRadius.horizontal(
           left: Radius.circular(32),
           right: Radius.circular(32),
         ),
       ),
-      child: Container(
-        margin: EdgeInsetsDirectional.only(end: 9, start: 9),
-        child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              // Expanded(
-              //   child: Container(
-              //     margin: EdgeInsetsDirectional.only(start: 31, end: 70),
-              //     child: Row(
-              //       crossAxisAlignment: CrossAxisAlignment.center,
-              //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //       children: [
-
-              //       ],
-              //     ),
-              //   ),
-              // ),
-              Container(
-                margin: EdgeInsetsDirectional.only(
-                  start: 22,
-                ),
-                child: Text(
-                  "Saltar",
-                  style: TextStyle(
-                      fontFamily: 'Roboto-Medium',
-                      color: Colors.white,
-                      fontSize: 16),
-                ),
-              ),
-              Container(
-                width: widget.isPressedList.length * 14,
-                child: Row(
+      child: lastDot
+          ? Center(
+              child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      widget.handleDotTap(0, widget.isPressedList);
+                    });
+                  },
+                  child: Text(
+                    "Libera tu banca",
+                    style: TextStyle(
+                        fontFamily: 'Roboto-Medium',
+                        color: Color(int.parse('0xFF7C24DB')),
+                        fontSize: 16),
+                  )))
+          : Container(
+              margin: const EdgeInsetsDirectional.only(end: 9, start: 9),
+              child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: List.generate(
-                    widget.isPressedList.length,
-                    (index) => DotCarrusel(
-                      isPressed: widget.isPressedList[index],
-                      onTap: () {
-                        setState(() {
-                          widget.handleDotTap(index, widget.isPressedList);
-                        });
-                      },
+                  children: [
+                    Container(
+                      margin: const EdgeInsetsDirectional.only(
+                        start: 22,
+                      ),
+                      child: const Text(
+                        "Saltar",
+                        style: TextStyle(
+                            fontFamily: 'Roboto-Medium',
+                            color: Colors.white,
+                            fontSize: 16),
+                      ),
                     ),
-                  ),
-                ),
-              ),
-              GestureDetector(
-                  onTap: () {
-                    int selectedPosition = widget.isPressedList.indexOf(true);
-                    if (selectedPosition != -1 &&
-                        selectedPosition < widget.isPressedList.length - 1) {
-                      setState(() {
-                        widget.handleDotTap(
-                            selectedPosition + 1, widget.isPressedList);
-                      });
-                    }
-                  },
-                  child: Container(
-                    width: 42,
-                    height: 42,
-                    child: SvgPicture.asset(
-                      'assets/images/sc_1/GoNext.svg',
+                    Container(
+                      width: widget.isPressedList.length * 14,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: List.generate(
+                          widget.isPressedList.length,
+                          (index) => DotCarrusel(
+                            isPressed: widget.isPressedList[index],
+                            onTap: () {
+                              setState(() {
+                                widget.handleDotTap(
+                                    index, widget.isPressedList);
+                              });
+                            },
+                          ),
+                        ),
+                      ),
                     ),
-                  ))
-            ]),
-      ),
+                    GestureDetector(
+                        onTap: () {
+                          int selectedPosition =
+                              widget.isPressedList.indexOf(true);
+                          if (selectedPosition != -1 &&
+                              selectedPosition <
+                                  widget.isPressedList.length - 1) {
+                            setState(() {
+                              widget.handleDotTap(
+                                  selectedPosition + 1, widget.isPressedList);
+                            });
+                          }
+                        },
+                        child: Container(
+                          width: 42,
+                          height: 42,
+                          child: SvgPicture.asset(
+                            'assets/images/sc_1/GoNext.svg',
+                          ),
+                        ))
+                  ]),
+            ),
     );
   }
 }
