@@ -59,45 +59,27 @@ class _SendScreenState extends State<SendScreen> {
                           ],
                         ),
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          RichText(
-                            text: TextSpan(
-                              style: DefaultTextStyle.of(context).style,
-                              children: const <TextSpan>[
-                                TextSpan(
-                                  text:
-                                      'Pasa plata libremente y sin costo a cualquier',
-                                  style: TextStyle(
-                                    fontSize: 16.0, // Tamaño del texto
-                                    fontWeight:
-                                        FontWeight.normal, // Fuente en negrita
-                                    color: Colors.white, // Color del texto
-                                  ),
-                                ),
-                              ],
-                            ),
+                      Container(
+                        margin: const EdgeInsetsDirectional.symmetric(
+                            horizontal: 16),
+                        height: 45, // Altura fija del contenedor
+                        alignment: Alignment
+                            .center, // Centra el contenido verticalmente
+                        child: const Text(
+                          'Pasa plata libremente y sin costo a cualquier cuenta bancaria o celular en Colombia.',
+                          textAlign: TextAlign
+                              .center, // Centra el texto horizontalmente
+                          overflow: TextOverflow
+                              .ellipsis, // Puedes cambiar esto según tus necesidades
+                          maxLines:
+                              2, // Máximo de líneas antes de mostrar "...", ajusta según sea necesario
+                          style: TextStyle(
+                            fontSize: 16.0, // Tamaño del texto
+                            fontWeight: FontWeight.normal, // Fuente regular
+                            color: Colors.white, // Color del texto
                           ),
-                          RichText(
-                            text: TextSpan(
-                              style: DefaultTextStyle.of(context).style,
-                              children: const <TextSpan>[
-                                TextSpan(
-                                  text:
-                                      'cuenta bancaria o celular en Colombia.',
-                                  style: TextStyle(
-                                    fontSize: 16.0, // Tamaño del texto
-                                    fontWeight:
-                                        FontWeight.normal, // Fuente en negrita
-                                    color: Colors.white, // Color del texto
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      )
+                        ),
+                      ),
                     ],
                   ),
                 ],

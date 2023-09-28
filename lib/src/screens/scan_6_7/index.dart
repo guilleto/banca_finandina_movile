@@ -31,73 +31,60 @@ class _ScanScreenState extends State<ScanScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const SizedBox(
-                    height: 25,
-                    width: 25,
-                    child: AssetFadeIn(
-                      urlAsset: 'assets/images/sc_1/IconFinandina.svg',
+                  const Padding(
+                    padding: EdgeInsets.only(right: 25),
+                    child: SizedBox(
+                      height: 25,
+                      width: 25,
+                      child: AssetFadeIn(
+                        urlAsset: 'assets/images/sc_1/IconFinandina.svg',
+                      ),
                     ),
                   ),
                   Image.asset(
                     'assets/images/sc_6_7/ComboGroup.png',
                   ),
-                  Column(
-                    children: [
-                      RichText(
-                        text: TextSpan(
-                          style: DefaultTextStyle.of(context).style,
-                          children: const <TextSpan>[
-                            TextSpan(
-                              text: '¡Escanea y listo!', // Resto del texto
-                              style: TextStyle(
-                                fontSize: 28.0, // Tamaño del texto
-                                fontWeight:
-                                    FontWeight.bold, // Fuente en regular
-                                color: Colors.white, // Color del texto
+                  Padding(
+                    padding: const EdgeInsets.only(right: 25),
+                    child: Column(
+                      children: [
+                        RichText(
+                          text: TextSpan(
+                            style: DefaultTextStyle.of(context).style,
+                            children: const <TextSpan>[
+                              TextSpan(
+                                text: '¡Escanea y listo!', // Resto del texto
+                                style: TextStyle(
+                                  fontSize: 28.0, // Tamaño del texto
+                                  fontWeight:
+                                      FontWeight.bold, // Fuente en regular
+                                  color: Colors.white, // Color del texto
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          RichText(
-                            text: TextSpan(
-                              style: DefaultTextStyle.of(context).style,
-                              children: const <TextSpan>[
-                                TextSpan(
-                                  text:
-                                      'Paga en datáfonos con QR y libérate de las',
-                                  style: TextStyle(
-                                    fontSize: 16.0, // Tamaño del texto
-                                    fontWeight:
-                                        FontWeight.normal, // Fuente en negrita
-                                    color: Colors.white, // Color del texto
-                                  ),
-                                ),
-                              ],
+                        Container(
+                          height: 45, // Altura fija del contenedor
+                          alignment: Alignment
+                              .center, // Centra el contenido verticalmente
+                          child: const Text(
+                            'Paga en datáfonos con QR y libérate de las tarjetas físicas.',
+                            textAlign: TextAlign
+                                .center, // Centra el texto horizontalmente
+                            overflow: TextOverflow
+                                .ellipsis, // Puedes cambiar esto según tus necesidades
+                            maxLines:
+                                2, // Máximo de líneas antes de mostrar "...", ajusta según sea necesario
+                            style: TextStyle(
+                              fontSize: 16.0, // Tamaño del texto
+                              fontWeight: FontWeight.normal, // Fuente regular
+                              color: Colors.white, // Color del texto
                             ),
                           ),
-                          RichText(
-                            text: TextSpan(
-                              style: DefaultTextStyle.of(context).style,
-                              children: const <TextSpan>[
-                                TextSpan(
-                                  text: 'tarjetas físicas.',
-                                  style: TextStyle(
-                                    fontSize: 16.0, // Tamaño del texto
-                                    fontWeight:
-                                        FontWeight.normal, // Fuente en negrita
-                                    color: Colors.white, // Color del texto
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),

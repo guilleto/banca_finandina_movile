@@ -60,44 +60,25 @@ class _BankScreenState extends State<BankScreen> {
                           ],
                         ),
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          RichText(
-                            text: TextSpan(
-                              style: DefaultTextStyle.of(context).style,
-                              children: const <TextSpan>[
-                                TextSpan(
-                                  text:
-                                      'La oficina más cercana es tu celular. Libérate',
-                                  style: TextStyle(
-                                    fontSize: 16.0, // Tamaño del texto
-                                    fontWeight:
-                                        FontWeight.normal, // Fuente en negrita
-                                    color: Colors.white, // Color del texto
-                                  ),
-                                ),
-                              ],
-                            ),
+                      Container(
+                        height: 45, // Altura fija del contenedor
+                        alignment: Alignment
+                            .center, // Centra el contenido verticalmente
+                        child: const Text(
+                          'La oficina más cercana es tu celular. Libérate de las filas y los trámites largos.',
+                          textAlign: TextAlign
+                              .center, // Centra el texto horizontalmente
+                          overflow: TextOverflow
+                              .ellipsis, // Puedes cambiar esto según tus necesidades
+                          maxLines:
+                              2, // Máximo de líneas antes de mostrar "...", ajusta según sea necesario
+                          style: TextStyle(
+                            fontSize: 16.0, // Tamaño del texto
+                            fontWeight: FontWeight.normal, // Fuente regular
+                            color: Colors.white, // Color del texto
                           ),
-                          RichText(
-                            text: TextSpan(
-                              style: DefaultTextStyle.of(context).style,
-                              children: const <TextSpan>[
-                                TextSpan(
-                                  text: 'de las filas y los trámites largos.',
-                                  style: TextStyle(
-                                    fontSize: 16.0, // Tamaño del texto
-                                    fontWeight:
-                                        FontWeight.normal, // Fuente en negrita
-                                    color: Colors.white, // Color del texto
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      )
+                        ),
+                      ),
                     ],
                   ),
                 ],

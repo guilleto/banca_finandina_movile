@@ -60,44 +60,25 @@ class _PayScreenState extends State<PayScreen> {
                           ],
                         ),
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          RichText(
-                            text: TextSpan(
-                              style: DefaultTextStyle.of(context).style,
-                              children: const <TextSpan>[
-                                TextSpan(
-                                  text:
-                                      'Puedes pagar tus productos, recibos y facturas',
-                                  style: TextStyle(
-                                    fontSize: 16.0, // Tamaño del texto
-                                    fontWeight:
-                                        FontWeight.normal, // Fuente en negrita
-                                    color: Colors.white, // Color del texto
-                                  ),
-                                ),
-                              ],
-                            ),
+                      Container(
+                        height: 45, // Altura fija del contenedor
+                        alignment: Alignment
+                            .center, // Centra el contenido verticalmente
+                        child: const Text(
+                          'Puedes pagar tus productos, recibos y facturas en cualquier momento y lugar.',
+                          textAlign: TextAlign
+                              .center, // Centra el texto horizontalmente
+                          overflow: TextOverflow
+                              .ellipsis, // Puedes cambiar esto según tus necesidades
+                          maxLines:
+                              2, // Máximo de líneas antes de mostrar "...", ajusta según sea necesario
+                          style: TextStyle(
+                            fontSize: 16.0, // Tamaño del texto
+                            fontWeight: FontWeight.normal, // Fuente regular
+                            color: Colors.white, // Color del texto
                           ),
-                          RichText(
-                            text: TextSpan(
-                              style: DefaultTextStyle.of(context).style,
-                              children: const <TextSpan>[
-                                TextSpan(
-                                  text: 'en cualquier momento y lugar.',
-                                  style: TextStyle(
-                                    fontSize: 16.0, // Tamaño del texto
-                                    fontWeight:
-                                        FontWeight.normal, // Fuente en negrita
-                                    color: Colors.white, // Color del texto
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      )
+                        ),
+                      ),
                     ],
                   ),
                 ],
