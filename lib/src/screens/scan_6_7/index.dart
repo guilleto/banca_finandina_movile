@@ -32,7 +32,7 @@ class _ScanScreenState extends State<ScanScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Padding(
-                    padding: EdgeInsets.only(right: 25),
+                    padding: EdgeInsets.only(right: 24),
                     child: SizedBox(
                       height: 25,
                       width: 25,
