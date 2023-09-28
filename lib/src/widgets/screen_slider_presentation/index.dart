@@ -7,8 +7,6 @@ import '../../screens/products_2/index.dart';
 import '../../screens/scan_6_7/index.dart';
 import '../../screens/send_4/index.dart';
 import '../carrusel_board/index.dart';
-import '../dot_carrusel/index.dart';
-import 'package:flutter/material.dart';
 
 class ScreenSliderPresentation extends StatefulWidget {
   const ScreenSliderPresentation({
@@ -23,12 +21,12 @@ class ScreenSliderPresentation extends StatefulWidget {
 class _ScreenSliderPresentationState extends State<ScreenSliderPresentation> {
   late List<bool> isPressedList;
   final List<Widget> screenToRenderList = [
-    InitialScreen(),
-    ProductsScreen(),
-    PayScreen(),
-    SendScreen(),
-    BankScreen(),
-    ScanScreen(),
+    const InitialScreen(),
+    const ProductsScreen(),
+    const PayScreen(),
+    const SendScreen(),
+    const BankScreen(),
+    const ScanScreen(),
   ];
 
   late Widget screenToRender;
@@ -47,7 +45,6 @@ class _ScreenSliderPresentationState extends State<ScreenSliderPresentation> {
   }
 
   void handleDotTap(int index, List<bool> isPressedList) {
-    print("object");
     setState(() {
       screenToRender = screenToRenderList[index];
       for (int i = 0; i < isPressedList.length; i++) {
@@ -68,7 +65,8 @@ class _ScreenSliderPresentationState extends State<ScreenSliderPresentation> {
               child: child,
             ),
 
-            duration: Duration(milliseconds: 1000), // Duración de la animación
+            duration:
+                const Duration(milliseconds: 1000), // Duración de la animación
             switchInCurve: Curves.easeIn, // Curva de entrada
             switchOutCurve: Curves.easeOut, // Curva de salida
             layoutBuilder: (currentChild, previousChildren) {

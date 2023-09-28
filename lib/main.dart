@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
           colorSchemeSeed: Colors.white,
           fontFamily: "Roboto"),
       title: 'FinandinaApp',
-      home: ScreenSliderPresentation(),
+      home: const ScreenSliderPresentation(),
     );
   }
 }

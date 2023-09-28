@@ -13,9 +13,9 @@ class _AssetFadeInState extends State<AssetFadeIn> {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 1000),
+      duration: const Duration(milliseconds: 1000),
       curve: Curves.ease,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           color: Colors.transparent,
           borderRadius: BorderRadius.horizontal(
               left: Radius.circular(10), right: Radius.circular(10))),

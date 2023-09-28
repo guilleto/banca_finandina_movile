@@ -3,8 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../dot_carrusel/index.dart';
 
-import 'package:flutter/material.dart';
-
 class CarruselBoard extends StatefulWidget {
   final List<bool> isPressedList;
   final Function(int index, List<bool> isPressedList) handleDotTap;
@@ -68,7 +66,7 @@ class _CarruselBoardState extends State<CarruselBoard> {
                             fontSize: 16),
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       width: widget.isPressedList.length * 14,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -100,7 +98,7 @@ class _CarruselBoardState extends State<CarruselBoard> {
                             });
                           }
                         },
-                        child: Container(
+                        child: SizedBox(
                           width: 42,
                           height: 42,
                           child: SvgPicture.asset(
